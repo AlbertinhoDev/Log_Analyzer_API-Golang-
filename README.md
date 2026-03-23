@@ -177,6 +177,26 @@ The project includes:
 - unit tests for the analyzer
 - HTTP handler tests using `httptest`
 
+## Docker
+
+Build the Docker image:
+
+```bash
+docker build -t log-analyzer-api .
+```
+
+Run the container:
+
+```bash
+docker run -p 8080:8080 log-analyzer-api
+```
+
+After the container starts, the API is available at:
+
+```text
+http://localhost:8080
+```
+
 ## Notes
 
 This project intentionally keeps the implementation simple while following a modular backend structure:
