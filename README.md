@@ -37,8 +37,11 @@ The project is designed to demonstrate backend engineering basics:
 ```text
 cmd/server/main.go
 internal/handler/logs.go
+internal/handler/logs_test.go
 internal/service/parser.go
+internal/service/parser_test.go
 internal/service/analyzer.go
+internal/service/analyzer_test.go
 internal/model/log.go
 ```
 
@@ -160,6 +163,19 @@ If request JSON is invalid, the API returns:
   "error": "invalid JSON body"
 }
 ```
+
+## Testing
+
+Run all tests with:
+
+```bash
+go test ./...
+```
+
+The project includes:
+- unit tests for the parser
+- unit tests for the analyzer
+- HTTP handler tests using `httptest`
 
 ## Notes
 
