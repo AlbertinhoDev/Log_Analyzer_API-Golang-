@@ -197,6 +197,27 @@ After the container starts, the API is available at:
 http://localhost:8080
 ```
 
+Check the containerized API:
+
+```bash
+curl http://localhost:8080/health
+```
+
+```bash
+curl -X POST http://localhost:8080/analyze \
+  -H "Content-Type: application/json" \
+  -d '{
+    "log_text": "2026-03-20 10:15:22 ERROR Connection timeout\n2026-03-20 10:15:25 INFO Retry request"
+  }'
+```
+
+You can also use the included `Makefile`:
+
+```bash
+make docker-build
+make docker-run
+```
+
 ## Notes
 
 This project intentionally keeps the implementation simple while following a modular backend structure:
